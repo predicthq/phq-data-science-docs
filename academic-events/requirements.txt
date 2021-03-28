@@ -1,3 +1,4 @@
+attrs==20.3.0
 backcall==0.2.0
 branca==0.4.2
 certifi==2020.12.5
@@ -12,9 +13,11 @@ ipython==7.21.0
 ipython-genutils==0.2.0
 jedi==0.18.0
 Jinja2==2.11.3
+jsonschema==3.2.0
 jupyter-client==6.1.12
 jupyter-core==4.7.1
 MarkupSafe==1.1.1
+nbformat==5.1.2
 numpy==1.20.1
 pandas==1.2.3
 parso==0.8.1
@@ -26,6 +29,7 @@ predicthq==1.6.2
 prompt-toolkit==3.0.18
 ptyprocess==0.7.0
 Pygments==2.8.1
+pyrsistent==0.17.3
 python-dateutil==2.8.1
 pytz==2017.2
 pyzmq==22.0.3
