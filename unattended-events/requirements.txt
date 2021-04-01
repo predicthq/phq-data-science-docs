@@ -1,5 +1,5 @@
 branca==0.4.2
-calmap==0.0.8
+calmap==0.0.9
 fbprophet==0.7.1
 folium==0.12.1
 numpy==1.20.1
