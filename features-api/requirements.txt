@@ -1,0 +1,11 @@
+aiohttp==3.7.4.post0
+asyncio==3.4.3
+backoff==1.10.0
+bleach==3.3.0
+calmap==0.0.9
+iso8601==0.1.14
+matplotlib==3.4.2
+numpy==1.20.3
+pandas==1.2.4
+seaborn==0.11.1
+uvloop==0.15.2
