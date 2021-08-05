@@ -3,6 +3,6 @@ folium==0.12.1
 numpy==1.20.1
 pandas==1.2.2
 plotly==4.14.3
-predicthq>=1.6.3
+predicthq>=1.8.3
 pytz==2017.2
 timezonefinder==5.2.0
