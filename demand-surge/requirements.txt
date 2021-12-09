@@ -6,7 +6,3 @@ pyjanitor==0.21.2
 timezonefinder==5.2.0
 tonyg-rfc3339==0.1
 tqdm==4.62.3
-
-# streamlit-specific
-streamlit==1.2.0
-streamlit-folium==0.4.0
