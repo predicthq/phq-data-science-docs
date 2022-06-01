@@ -7,7 +7,7 @@ plotly==4.14.3
 shapely == 1.8.0
 geopandas == 0.10.2
 geopy==2.1.0
-numpy==1.20.3
+numpy==1.21.0
 matplotlib==3.4.2
 predicthq>=1.6.3
 pytz==2017.2
