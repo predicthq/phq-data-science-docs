@@ -120,3 +120,4 @@ dmypy.json
 cython_debug/
 .Rproj.user
 phq-data-science-docs.Rproj
+.Rhistory
