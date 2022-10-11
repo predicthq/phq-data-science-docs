@@ -1,5 +1,0 @@
-jupyter==1.0.0
-numpy==1.20.3
-pandas==1.2.4
-plotly==4.14.3
-prophet==1.0.1
