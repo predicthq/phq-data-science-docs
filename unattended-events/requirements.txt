@@ -17,6 +17,6 @@ calmap==0.0.9
 aiohttp==3.7.4.post0
 backoff==1.10.0
 iso8601==0.1.14
-requests==2.25.1
+requests==2.31.0
 seaborn==0.11.1
 uvloop==0.15.2
