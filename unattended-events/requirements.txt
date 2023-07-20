@@ -14,7 +14,7 @@ pytz==2017.2
 timezonefinder==5.2.0
 tonyg-rfc3339==0.1
 calmap==0.0.9
-aiohttp==3.7.4.post0
+aiohttp==3.8.5
 backoff==1.10.0
 iso8601==0.1.14
 requests==2.25.1
