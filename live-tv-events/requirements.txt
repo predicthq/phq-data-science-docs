@@ -6,7 +6,7 @@ plotly==4.14.3
 predicthq>=1.8.3
 pytz==2017.3
 timezonefinder==5.2.0
-aiohttp==3.7.4.post0
+aiohttp==3.8.5
 asyncio==3.4.3
 backoff==1.10.0
 bleach==3.3.0
