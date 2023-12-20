@@ -1,5 +1,5 @@
 pandas==1.1.5 
-predicthq==2.0.6
+predicthq==3.1.0
 shapely==1.8.0
 timezonefinder==5.2.0 
 numpy==1.20.3
