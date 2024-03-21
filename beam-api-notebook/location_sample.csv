@@ -1,4 +1,4 @@
-location_id,lat,lon,industry
-store_0,37.784,-122.404,restaurants
-store_1,47.611,-122.338,restaurants
-store_2,40.735,-73.869,restaurants
+location,lat,lon,timezone,industry
+store_0,40.751582853596915,-73.98155897848956,America/New_York,restaurants
+store_1,40.74559205863674,-73.9945205785237,America/New_York,restaurants
+store_2,33.971191942428334,-118.16436160102515,America/Los_Angeles,restaurants
