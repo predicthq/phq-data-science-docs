@@ -139,6 +139,20 @@ def readiness_status(analysis_id, access_token, beam_api_url=BEAM_API_URL):
 
     return response.json()["readiness_status"]
 
+def get_demand_type(analysis_id, access_token, beam_api_url=BEAM_API_URL):
+    """
+    Get the demand type of an analysis.
+    """
+    response = requests.get(
+        url=f"{beam_api_url}/analyses/{analysis_id}",
+        headers={
+            "Authorization": "Bearer " + access_token,
+            "Accept": "application/json",
+        },
+    )
+
+    return response.json()["demand_type"]
+
 
 def refresh_analysis(analysis_id, access_token, beam_api_url=BEAM_API_URL):
     """

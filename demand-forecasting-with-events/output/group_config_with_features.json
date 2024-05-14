@@ -6,10 +6,10 @@
             "store_1"
         ],
         "analysis_ids": [
-            "ho8jzrnJLwU",
-            "KjQmR4C5wGo"
+            "FwAg8FItj_g",
+            "PgxgAD0xN_g"
         ],
-        "group_id": "BEnSsmK0CGg",
+        "group_id": "O49ELk0vgpw",
         "group_status": {
             "readiness_status": "ready",
             "feature_importance_processing_completed": true
@@ -17,12 +17,9 @@
         "important_features": [
             "phq_attendance_concerts",
             "phq_attendance_conferences",
-            "phq_attendance_expos",
             "phq_attendance_festivals",
-            "phq_rank_observances",
             "phq_attendance_performing_arts",
             "phq_rank_public_holidays",
-            "phq_attendance_school_holidays",
             "phq_impact_severe_weather_air_quality_retail",
             "phq_impact_severe_weather_blizzard_retail",
             "phq_impact_severe_weather_cold_wave_retail",
@@ -36,6 +33,9 @@
             "phq_impact_severe_weather_thunderstorm_retail",
             "phq_impact_severe_weather_tornado_retail",
             "phq_impact_severe_weather_tropical_storm_retail",
+            "phq_attendance_expos",
+            "phq_rank_observances",
+            "phq_attendance_school_holidays",
             "phq_attendance_sports"
         ],
         "feature_importance": [
@@ -56,25 +56,9 @@
                 "important": true
             },
             {
-                "feature_group": "expos",
-                "features": [
-                    "phq_attendance_expos"
-                ],
-                "p_value": 0.0,
-                "important": true
-            },
-            {
                 "feature_group": "festivals",
                 "features": [
                     "phq_attendance_festivals"
-                ],
-                "p_value": 0.0,
-                "important": true
-            },
-            {
-                "feature_group": "observances",
-                "features": [
-                    "phq_rank_observances"
                 ],
                 "p_value": 0.0,
                 "important": true
@@ -91,14 +75,6 @@
                 "feature_group": "public-holidays",
                 "features": [
                     "phq_rank_public_holidays"
-                ],
-                "p_value": 0.0,
-                "important": true
-            },
-            {
-                "feature_group": "school-holidays",
-                "features": [
-                    "phq_attendance_school_holidays"
                 ],
                 "p_value": 0.0,
                 "important": true
@@ -124,11 +100,35 @@
                 "important": true
             },
             {
+                "feature_group": "expos",
+                "features": [
+                    "phq_attendance_expos"
+                ],
+                "p_value": 0.0012,
+                "important": true
+            },
+            {
+                "feature_group": "observances",
+                "features": [
+                    "phq_rank_observances"
+                ],
+                "p_value": 0.0015,
+                "important": true
+            },
+            {
+                "feature_group": "school-holidays",
+                "features": [
+                    "phq_attendance_school_holidays"
+                ],
+                "p_value": 0.002,
+                "important": true
+            },
+            {
                 "feature_group": "sports",
                 "features": [
                     "phq_attendance_sports"
                 ],
-                "p_value": 0.0,
+                "p_value": 0.0023,
                 "important": true
             },
             {
@@ -137,7 +137,7 @@
                     "phq_rank_academic_exam",
                     "phq_rank_academic_holiday"
                 ],
-                "p_value": 0.8108,
+                "p_value": 0.9376,
                 "important": false
             },
             {
@@ -145,7 +145,7 @@
                 "features": [
                     "phq_attendance_community"
                 ],
-                "p_value": 0.819,
+                "p_value": 0.9955,
                 "important": false
             }
         ]
@@ -153,23 +153,23 @@
     "group_B": {
         "name": "group_B_analysis",
         "locations": [
-            "store_1",
-            "store_2"
+            "store_2",
+            "store_3"
         ],
         "analysis_ids": [
-            "KjQmR4C5wGo",
-            "kpm5DOSBU_4"
+            "fdd3a-eMcvA",
+            "1HjlLnG9Nds"
         ],
-        "group_id": "PrYTZ1a2dKs",
+        "group_id": "xIFUHxe8MAA",
         "group_status": {
             "readiness_status": "ready",
             "feature_importance_processing_completed": true
         },
         "important_features": [
-            "phq_attendance_concerts",
             "phq_attendance_conferences",
-            "phq_attendance_festivals",
+            "phq_attendance_expos",
             "phq_rank_public_holidays",
+            "phq_attendance_sports",
             "phq_impact_severe_weather_air_quality_retail",
             "phq_impact_severe_weather_blizzard_retail",
             "phq_impact_severe_weather_cold_wave_retail",
@@ -183,21 +183,9 @@
             "phq_impact_severe_weather_thunderstorm_retail",
             "phq_impact_severe_weather_tornado_retail",
             "phq_impact_severe_weather_tropical_storm_retail",
-            "phq_attendance_performing_arts",
-            "phq_attendance_school_holidays",
-            "phq_attendance_expos",
-            "phq_rank_observances",
-            "phq_attendance_sports"
+            "phq_attendance_community"
         ],
         "feature_importance": [
-            {
-                "feature_group": "concerts",
-                "features": [
-                    "phq_attendance_concerts"
-                ],
-                "p_value": 0.0,
-                "important": true
-            },
             {
                 "feature_group": "conferences",
                 "features": [
@@ -207,9 +195,9 @@
                 "important": true
             },
             {
-                "feature_group": "festivals",
+                "feature_group": "expos",
                 "features": [
-                    "phq_attendance_festivals"
+                    "phq_attendance_expos"
                 ],
                 "p_value": 0.0,
                 "important": true
@@ -218,6 +206,14 @@
                 "feature_group": "public-holidays",
                 "features": [
                     "phq_rank_public_holidays"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "sports",
+                "features": [
+                    "phq_attendance_sports"
                 ],
                 "p_value": 0.0,
                 "important": true
@@ -239,15 +235,15 @@
                     "phq_impact_severe_weather_tornado_retail",
                     "phq_impact_severe_weather_tropical_storm_retail"
                 ],
-                "p_value": 0.0,
+                "p_value": 0.0032,
                 "important": true
             },
             {
-                "feature_group": "performing-arts",
+                "feature_group": "community",
                 "features": [
-                    "phq_attendance_performing_arts"
+                    "phq_attendance_community"
                 ],
-                "p_value": 0.0001,
+                "p_value": 0.0041,
                 "important": true
             },
             {
@@ -255,32 +251,24 @@
                 "features": [
                     "phq_attendance_school_holidays"
                 ],
-                "p_value": 0.0003,
-                "important": true
+                "p_value": 0.6439,
+                "important": false
             },
             {
-                "feature_group": "expos",
+                "feature_group": "concerts",
                 "features": [
-                    "phq_attendance_expos"
+                    "phq_attendance_concerts"
                 ],
-                "p_value": 0.002,
-                "important": true
+                "p_value": 0.6632,
+                "important": false
             },
             {
-                "feature_group": "observances",
+                "feature_group": "performing-arts",
                 "features": [
-                    "phq_rank_observances"
+                    "phq_attendance_performing_arts"
                 ],
-                "p_value": 0.0028,
-                "important": true
-            },
-            {
-                "feature_group": "sports",
-                "features": [
-                    "phq_attendance_sports"
-                ],
-                "p_value": 0.0038,
-                "important": true
+                "p_value": 0.6768,
+                "important": false
             },
             {
                 "feature_group": "academic",
@@ -288,15 +276,23 @@
                     "phq_rank_academic_exam",
                     "phq_rank_academic_holiday"
                 ],
-                "p_value": 0.105,
+                "p_value": 0.8177,
                 "important": false
             },
             {
-                "feature_group": "community",
+                "feature_group": "observances",
                 "features": [
-                    "phq_attendance_community"
+                    "phq_rank_observances"
                 ],
-                "p_value": 0.9947,
+                "p_value": 0.8284,
+                "important": false
+            },
+            {
+                "feature_group": "festivals",
+                "features": [
+                    "phq_attendance_festivals"
+                ],
+                "p_value": 0.9999,
                 "important": false
             }
         ]

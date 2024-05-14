@@ -1,21 +1,30 @@
 {
   "store_0": {
-    "lat": 40.751582853596915,
-    "lon": -73.98155897848956,
-    "industry": "restaurants",
-    "analysis_name": "store_0_analysis"
-    
-  },
-  "store_1": {
     "lat": 40.74559205863674,
     "lon": -73.9945205785237,
-    "industry": "restaurants",
-    "analysis_name": "store_1_analysis"
+    "timezone": "America/New_York",
+    "analysis_name": "store_0_daily_analysis",
+    "industry": "restaurants"
   },
-  "store_2": {
+  "store_1": {
     "lat": 33.971191942428334,
     "lon": -118.16436160102515,
-    "industry": "restaurants",
-    "analysis_name": "store_2_analysis"
+    "timezone": "America/Los_Angeles",
+    "analysis_name": "store_1_daily_analysis",
+    "industry": "restaurants"
+  },
+  "store_2": {
+    "lat": 40.751582853596915,
+    "lon": -73.98155897848956,
+    "timezone": "America/New_York",
+    "analysis_name": "store_2_monday_weekly_analysis",
+    "industry": "restaurants"
+  },
+"store_3": {
+    "lat": 40.74559205863674,
+    "lon": -73.9945205785237,
+    "timezone": "America/New_York",
+    "analysis_name": "store_3_monday_weekly_analysis",
+    "industry": "restaurants"
   }
 }

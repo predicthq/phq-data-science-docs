@@ -7,11 +7,12 @@ DATE_FORMAT = "%Y-%m-%d"
 
 def get_date_groups(start, end):
     """
-    Features API allows a range of up to 90 days, so we have to do several requests.
+    Features API allows a range of up to 91 days, so we have to do several requests.
     """
     start_date = datetime.strptime(start, DATE_FORMAT).date()
     end_date = datetime.strptime(end, DATE_FORMAT).date()
-    interval = timedelta(days=90)
+    # The interval is set to be the number of days of whole weeks.
+    interval = timedelta(days=91)
 
     current_date = start_date
     while current_date < end_date:
@@ -66,6 +67,10 @@ def get_features(info, features, phq_client):
             "active__gte": gte,
             "active__lte": lte,
         }
+
+        if info["interval"] == "week":
+            query["interval"] = "week"
+            query["week_start_day"] = info["week_start_day"]
 
         # location information
         if all(k in info for k in ["lat", "lon", "radius", "radius_unit"]):
