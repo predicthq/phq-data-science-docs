@@ -11,7 +11,6 @@ def get_date_groups(start, end):
     """
     start_date = datetime.strptime(start, DATE_FORMAT).date()
     end_date = datetime.strptime(end, DATE_FORMAT).date()
-    # The interval is set to be the number of days of whole weeks.
     interval = timedelta(days=91)
 
     current_date = start_date
