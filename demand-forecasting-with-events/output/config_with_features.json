@@ -2,7 +2,6 @@
     "store_0": {
         "lat": 40.74559205863674,
         "lon": -73.9945205785237,
-        "timezone": "America/New_York",
         "analysis_name": "store_0_daily_analysis",
         "industry": "restaurants",
         "min_phq_rank": 30,
@@ -10,7 +9,7 @@
         "end": "2019-12-31",
         "radius": 1.27,
         "radius_unit": "mi",
-        "analysis_id": "FwAg8FItj_g",
+        "analysis_id": "SifAUWvmIso",
         "analysis_readiness_status": "ready",
         "interval": "day",
         "week_start_day": null,
@@ -128,7 +127,7 @@
                 "features": [
                     "phq_rank_observances"
                 ],
-                "p_value": 0.0,
+                "p_value": 0.0002,
                 "important": true
             },
             {
@@ -137,7 +136,7 @@
                     "phq_rank_academic_exam",
                     "phq_rank_academic_holiday"
                 ],
-                "p_value": 0.9471,
+                "p_value": 0.9654,
                 "important": false
             },
             {
@@ -145,7 +144,7 @@
                 "features": [
                     "phq_attendance_community"
                 ],
-                "p_value": 0.9999,
+                "p_value": 0.9917,
                 "important": false
             }
         ]
@@ -153,7 +152,6 @@
     "store_1": {
         "lat": 33.971191942428334,
         "lon": -118.16436160102515,
-        "timezone": "America/Los_Angeles",
         "analysis_name": "store_1_daily_analysis",
         "industry": "restaurants",
         "min_phq_rank": 30,
@@ -161,7 +159,7 @@
         "end": "2018-11-30",
         "radius": 1.56,
         "radius_unit": "mi",
-        "analysis_id": "PgxgAD0xN_g",
+        "analysis_id": "_akRzkMRumc",
         "analysis_readiness_status": "ready",
         "interval": "day",
         "week_start_day": null,
@@ -292,7 +290,6 @@
     "store_2": {
         "lat": 40.751582853596915,
         "lon": -73.98155897848956,
-        "timezone": "America/New_York",
         "analysis_name": "store_2_monday_weekly_analysis",
         "industry": "restaurants",
         "min_phq_rank": 30,
@@ -300,7 +297,7 @@
         "end": "2019-12-23",
         "radius": 1.21,
         "radius_unit": "mi",
-        "analysis_id": "fdd3a-eMcvA",
+        "analysis_id": "CZKEA8RUahA",
         "analysis_readiness_status": "ready",
         "interval": "week",
         "week_start_day": "monday",
@@ -378,7 +375,7 @@
                 "features": [
                     "phq_attendance_school_holidays"
                 ],
-                "p_value": 0.0001,
+                "p_value": 0.0055,
                 "important": true
             },
             {
@@ -398,15 +395,7 @@
                     "phq_impact_severe_weather_tornado_retail",
                     "phq_impact_severe_weather_tropical_storm_retail"
                 ],
-                "p_value": 0.326,
-                "important": false
-            },
-            {
-                "feature_group": "observances",
-                "features": [
-                    "phq_rank_observances"
-                ],
-                "p_value": 0.9842,
+                "p_value": 0.9736,
                 "important": false
             },
             {
@@ -414,7 +403,15 @@
                 "features": [
                     "phq_attendance_performing_arts"
                 ],
-                "p_value": 0.9999,
+                "p_value": 0.9824,
+                "important": false
+            },
+            {
+                "feature_group": "observances",
+                "features": [
+                    "phq_rank_observances"
+                ],
+                "p_value": 0.9873,
                 "important": false
             },
             {
@@ -430,7 +427,6 @@
     "store_3": {
         "lat": 40.74559205863674,
         "lon": -73.9945205785237,
-        "timezone": "America/New_York",
         "analysis_name": "store_3_monday_weekly_analysis",
         "industry": "restaurants",
         "min_phq_rank": 30,
@@ -438,14 +434,14 @@
         "end": "2019-12-23",
         "radius": 1.27,
         "radius_unit": "mi",
-        "analysis_id": "1HjlLnG9Nds",
+        "analysis_id": "_8uPhbFxT5U",
         "analysis_readiness_status": "ready",
         "interval": "week",
         "week_start_day": "monday",
         "important_features": [
             "phq_attendance_conferences",
-            "phq_rank_public_holidays",
             "phq_attendance_sports",
+            "phq_rank_public_holidays",
             "phq_attendance_expos",
             "phq_impact_severe_weather_air_quality_retail",
             "phq_impact_severe_weather_blizzard_retail",
@@ -472,17 +468,17 @@
                 "important": true
             },
             {
-                "feature_group": "public-holidays",
+                "feature_group": "sports",
                 "features": [
-                    "phq_rank_public_holidays"
+                    "phq_attendance_sports"
                 ],
                 "p_value": 0.0,
                 "important": true
             },
             {
-                "feature_group": "sports",
+                "feature_group": "public-holidays",
                 "features": [
-                    "phq_attendance_sports"
+                    "phq_rank_public_holidays"
                 ],
                 "p_value": 0.0,
                 "important": true
@@ -512,7 +508,7 @@
                     "phq_impact_severe_weather_tornado_retail",
                     "phq_impact_severe_weather_tropical_storm_retail"
                 ],
-                "p_value": 0.0008,
+                "p_value": 0.0,
                 "important": true
             },
             {
@@ -520,23 +516,23 @@
                 "features": [
                     "phq_attendance_performing_arts"
                 ],
-                "p_value": 0.0068,
+                "p_value": 0.0029,
                 "important": true
-            },
-            {
-                "feature_group": "community",
-                "features": [
-                    "phq_attendance_community"
-                ],
-                "p_value": 0.1905,
-                "important": false
             },
             {
                 "feature_group": "observances",
                 "features": [
                     "phq_rank_observances"
                 ],
-                "p_value": 0.294,
+                "p_value": 0.1477,
+                "important": false
+            },
+            {
+                "feature_group": "community",
+                "features": [
+                    "phq_attendance_community"
+                ],
+                "p_value": 0.3818,
                 "important": false
             },
             {
