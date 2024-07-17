@@ -1,5 +1,7 @@
 import pandas as pd
 import requests
+from collections import defaultdict
+from datetime import datetime, timedelta
 
 BEAM_API_URL = "https://api.predicthq.com/v1/beam"
 
@@ -8,9 +10,22 @@ def _get_start_end_dates(demand_df):
     """
     Extract start and end dates for each location from the demand DataFrame.
     """
-    start_dates = demand_df.groupby("location")["date"].min().to_dict()
-    end_dates = demand_df.groupby("location")["date"].max().to_dict()
-    return start_dates, end_dates
+    if demand_df is not None:
+        start_dates = demand_df.groupby("location")["date"].min().to_dict()
+        end_dates = demand_df.groupby("location")["date"].max().to_dict()
+        return start_dates, end_dates
+    else:
+        return {}, {}
+
+
+def _get_default_start_end_dates():
+    """
+    Define default start and end dates.
+    """
+    today = datetime.now()
+    default_start = (today - timedelta(days=365 * 2)).strftime("%Y-%m-%d")
+    default_end = (today + timedelta(days=90)).strftime("%Y-%m-%d")
+    return default_start, default_end
 
 
 def _get_suggested_radius(info, phq_client):
@@ -32,43 +47,57 @@ def _get_suggested_radius(info, phq_client):
         return None, None
 
 
-def supplement_config(config, demand_df, phq_client):
+def supplement_config(config, phq_client, demand_df=None):
     """
     Supplement locations with additional information.
     """
     start_dates, end_dates = _get_start_end_dates(demand_df)
+    default_start, default_end = _get_default_start_end_dates()
 
     for location, info in config.items():
 
         # industry
-        if "industry" in info:
-            info["industry"] = (
-                info["industry"].lower().replace("food_and_beverage", "restaurants")
-            )
-        else:
-            info["industry"] = "other"
+        info["industry"] = (
+            info.setdefault("industry", "other")
+            .lower()
+            .replace("food_and_beverage", "restaurants")
+        )
 
         # min_phq_rank
-        if "min_phq_rank" not in info:
-            industry_min_phq_ranks = {
-                "accommodation": 35,
-                "parking": 35,
-                "restaurants": 30,
-                "retail": 50,
-            }
-            info["min_phq_rank"] = industry_min_phq_ranks.get(info.get("industry"), 30)
+        industry_min_phq_ranks = {
+            "accommodation": 35,
+            "parking": 35,
+            "restaurants": 30,
+            "retail": 50,
+        }
+        info.setdefault(
+            "min_phq_rank", industry_min_phq_ranks.get(info.get("industry"), 30)
+        )
 
-        # start and end dates of demand data
-        info["start"] = start_dates.get(location, None)
-        info["end"] = end_dates.get(location, None)
+        # start and end dates
+        if demand_df is not None:
+            info["start"] = start_dates.get(location, default_start)
+            info["end"] = end_dates.get(location, default_end)
+        else:
+            info.setdefault("start", default_start)
+            info.setdefault("end", default_end)
 
         # suggested radius
-        radius, radius_unit = _get_suggested_radius(info, phq_client)
-        if radius is not None and radius_unit is not None:
-            info["radius"] = radius
-            info["radius_unit"] = radius_unit
-        else:
-            print(f"Failed to get suggested radius for {location}")
+        if "radius" not in info or "radius_unit" not in info:
+            radius, radius_unit = _get_suggested_radius(info, phq_client)
+            if radius is not None and radius_unit is not None:
+                info["radius"] = radius
+                info["radius_unit"] = radius_unit
+            else:
+                print(f"Failed to get suggested radius for {location}")
+
+        # data interval
+        if demand_df is None:
+            info.setdefault("interval", "day")
+            if info["interval"] == "day":
+                info["week_start_day"] = None
+            elif info["interval"] == "week":
+                info.setdefault("week_start_day", "monday")
 
     return config
 
@@ -138,6 +167,7 @@ def readiness_status(analysis_id, access_token, beam_api_url=BEAM_API_URL):
     )
 
     return response.json()["readiness_status"]
+
 
 def get_demand_type(analysis_id, access_token, beam_api_url=BEAM_API_URL):
     """
