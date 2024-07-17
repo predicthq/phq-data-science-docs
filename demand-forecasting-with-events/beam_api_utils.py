@@ -1,6 +1,4 @@
-import pandas as pd
 import requests
-from collections import defaultdict
 from datetime import datetime, timedelta
 
 BEAM_API_URL = "https://api.predicthq.com/v1/beam"
