@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 DATE_FORMAT = "%Y-%m-%d"
 
 
-def get_date_groups(start, end):
+def _get_date_groups(start, end):
     """
     Features API allows a range of up to 91 days, so we have to do several requests.
     """
@@ -22,7 +22,7 @@ def get_date_groups(start, end):
         current_date = next_date
 
 
-def get_preferred_stat(feature):
+def _get_preferred_stat(feature):
     """
     Get the preferred statistic for a feature.
     """
@@ -33,7 +33,7 @@ def get_preferred_stat(feature):
     return "sum"
 
 
-def construct_record(feature):
+def _construct_record(feature):
     """
     Construct a record from feature data based on the feature type.
     """
@@ -42,7 +42,7 @@ def construct_record(feature):
         if any(
             keyword in k for keyword in ["attendance", "spend", "impact", "viewership"]
         ):
-            record[k] = v.get("stats", {}).get(get_preferred_stat(k))
+            record[k] = v.get("stats", {}).get(_get_preferred_stat(k))
         elif "rank" in k:
             record[k] = sum(
                 int(rank) * int(count)
@@ -61,12 +61,13 @@ def get_features(info, features, phq_client):
     if not isinstance(features, list) or not features:
         raise ValueError("Missing or invalid features list provided.")
 
-    for gte, lte in get_date_groups(info["start"], info["end"]):
+    for gte, lte in _get_date_groups(info["start"], info["end"]):
         query = {
             "active__gte": gte,
             "active__lte": lte,
         }
 
+        # data interval information
         if info["interval"] == "week":
             query["interval"] = "week"
             query["week_start_day"] = info["week_start_day"]
@@ -88,13 +89,13 @@ def get_features(info, features, phq_client):
             if "rank" in feature:
                 query[f"{feature}"] = True
             else:
-                query[f"{feature}__stats"] = [get_preferred_stat(feature)]
+                query[f"{feature}__stats"] = [_get_preferred_stat(feature)]
                 query[f"{feature}__phq_rank"] = {"gte": info["min_phq_rank"]}
 
         try:
             features_data = phq_client.features.obtain_features(**query)
             for feature in features_data:
-                record = construct_record(
+                record = _construct_record(
                     feature.model_dump(exclude_unset=True, exclude_none=True)
                 )
                 result.append(record)
