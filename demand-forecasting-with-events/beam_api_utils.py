@@ -147,29 +147,16 @@ def upload_demand(demand_json, analysis_id, access_token, beam_api_url=BEAM_API_
     )
 
     if response.status_code == 202:
-        return print("--- the request has been accepted for processing.")
+        print("--- the request has been accepted for processing.")
     else:
-        return print(response.content)
+        print(response.content)
+
+    return response.status_code
 
 
-def readiness_status(analysis_id, access_token, beam_api_url=BEAM_API_URL):
+def get_analysis_details(analysis_id, access_token, beam_api_url=BEAM_API_URL):
     """
-    Get the readiness status of an analysis.
-    """
-    response = requests.get(
-        url=f"{beam_api_url}/analyses/{analysis_id}",
-        headers={
-            "Authorization": "Bearer " + access_token,
-            "Accept": "application/json",
-        },
-    )
-
-    return response.json()["readiness_status"]
-
-
-def get_demand_type(analysis_id, access_token, beam_api_url=BEAM_API_URL):
-    """
-    Get the demand type of an analysis.
+    Get the details of an analysis.
     """
     response = requests.get(
         url=f"{beam_api_url}/analyses/{analysis_id}",
@@ -178,8 +165,11 @@ def get_demand_type(analysis_id, access_token, beam_api_url=BEAM_API_URL):
             "Accept": "application/json",
         },
     )
-
-    return response.json()["demand_type"]
+    data = response.json()
+    return {
+        "readiness_status": data.get("readiness_status"),
+        "demand_type": data.get("demand_type"),
+    }
 
 
 def refresh_analysis(analysis_id, access_token, beam_api_url=BEAM_API_URL):
@@ -195,9 +185,11 @@ def refresh_analysis(analysis_id, access_token, beam_api_url=BEAM_API_URL):
     )
 
     if response.status_code == 202:
-        return print("--- the request has been accepted for processing.")
+        print("--- the request has been accepted for processing.")
     else:
-        return print(response.content)
+        print(response.content)
+
+    return response.status_code
 
 
 def get_feature_importance(analysis_id, access_token, beam_api_url=BEAM_API_URL):
