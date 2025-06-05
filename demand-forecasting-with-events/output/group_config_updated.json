@@ -1,0 +1,34 @@
+{
+    "group_A": {
+        "name": "group_A_analysis",
+        "locations": [
+            "store_0",
+            "store_1"
+        ],
+        "analysis_ids": [
+            "itHSB5-WICk",
+            "XCwohExDJH4"
+        ],
+        "group_id": "4rKOnAWv690",
+        "group_status": {
+            "readiness_status": "ready",
+            "feature_importance_processing_completed": true
+        }
+    },
+    "group_B": {
+        "name": "group_B_analysis",
+        "locations": [
+            "store_2",
+            "store_3"
+        ],
+        "analysis_ids": [
+            "yFtsOK53__M",
+            "rUpVMrAcqCQ"
+        ],
+        "group_id": "ut4LtFr5xFw",
+        "group_status": {
+            "readiness_status": "ready",
+            "feature_importance_processing_completed": true
+        }
+    }
+}

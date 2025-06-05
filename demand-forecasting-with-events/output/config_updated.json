@@ -1,0 +1,46 @@
+{
+    "store_0": {
+        "lat": 40.74559205863674,
+        "lon": -73.9945205785237,
+        "analysis_name": "store_0_daily_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-02",
+        "end": "2019-12-31",
+        "analysis_id": "itHSB5-WICk",
+        "upload_status": 202,
+        "readiness_status": "ready"
+    },
+    "store_1": {
+        "lat": 33.971191942428334,
+        "lon": -118.16436160102515,
+        "analysis_name": "store_1_daily_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-02",
+        "end": "2018-11-30",
+        "analysis_id": "XCwohExDJH4",
+        "upload_status": 202,
+        "readiness_status": "ready"
+    },
+    "store_2": {
+        "lat": 40.751582853596915,
+        "lon": -73.98155897848956,
+        "analysis_name": "store_2_monday_weekly_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-09",
+        "end": "2019-12-23",
+        "analysis_id": "yFtsOK53__M",
+        "upload_status": 202,
+        "readiness_status": "ready"
+    },
+    "store_3": {
+        "lat": 40.74559205863674,
+        "lon": -73.9945205785237,
+        "analysis_name": "store_3_monday_weekly_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-09",
+        "end": "2019-12-23",
+        "analysis_id": "rUpVMrAcqCQ",
+        "upload_status": 202,
+        "readiness_status": "ready"
+    }
+}
