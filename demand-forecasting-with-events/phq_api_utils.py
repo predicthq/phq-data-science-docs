@@ -1,7 +1,9 @@
 import requests
+import pandas as pd
 from datetime import datetime, timedelta
 
 BEAM_API_URL = "https://api.predicthq.com/v1/beam"
+FEATURES_API_URL = "https://api.predicthq.com/v1/features/"
 
 
 def _get_start_end_dates(demand_df):
@@ -26,26 +28,7 @@ def _get_default_start_end_dates():
     return default_start, default_end
 
 
-def _get_suggested_radius(info, phq_client):
-    """
-    Fetch suggested radius.
-    """
-    search_params = {
-        "location__origin": f"{info['lat']},{info['lon']}",
-        "radius_unit": "mi",
-    }
-    if info["industry"] != "other":
-        search_params["industry"] = info["industry"]
-
-    try:
-        suggested_radius = phq_client.radius.search(**search_params)
-        return suggested_radius.radius, suggested_radius.radius_unit
-    except Exception as e:
-        print(f"Error retrieving radius for {info['lat']},{info['lon']}: {str(e)}")
-        return None, None
-
-
-def supplement_config(config, phq_client, demand_df=None):
+def supplement_config(config, demand_df=None):
     """
     Supplement locations with additional information.
     """
@@ -58,18 +41,6 @@ def supplement_config(config, phq_client, demand_df=None):
         info["industry"] = (
             info.setdefault("industry", "other")
             .lower()
-            .replace("food_and_beverage", "restaurants")
-        )
-
-        # min_phq_rank
-        industry_min_phq_ranks = {
-            "accommodation": 35,
-            "parking": 35,
-            "restaurants": 30,
-            "retail": 50,
-        }
-        info.setdefault(
-            "min_phq_rank", industry_min_phq_ranks.get(info.get("industry"), 30)
         )
 
         # start and end dates
@@ -79,23 +50,6 @@ def supplement_config(config, phq_client, demand_df=None):
         else:
             info.setdefault("start", default_start)
             info.setdefault("end", default_end)
-
-        # suggested radius
-        if "radius" not in info or "radius_unit" not in info:
-            radius, radius_unit = _get_suggested_radius(info, phq_client)
-            if radius is not None and radius_unit is not None:
-                info["radius"] = radius
-                info["radius_unit"] = radius_unit
-            else:
-                print(f"Failed to get suggested radius for {location}")
-
-        # data interval
-        if demand_df is None:
-            info.setdefault("interval", "day")
-            if info["interval"] == "day":
-                info["week_start_day"] = None
-            elif info["interval"] == "week":
-                info.setdefault("week_start_day", "monday")
 
     return config
 
@@ -115,10 +69,10 @@ def create_analysis_id(
                 "lat": str(location["lat"]),
                 "lon": str(location["lon"]),
             },
-            "radius": location["radius"],
-            "unit": location["radius_unit"],
         },
-        "rank": {"type": "phq", "levels": {"phq": {"min": location["min_phq_rank"]}}},
+        "demand_type":{
+            "industry": location["industry"],
+            },
     }
 
     response = requests.post(
@@ -283,3 +237,42 @@ def get_group(group_id, access_token, beam_api_url=BEAM_API_URL):
     ]
 
     return {"name": name, "analysis_ids": analysis_ids}
+
+
+def get_features(
+    location,
+    access_token,
+    group_id=None,
+    features_api_url=FEATURES_API_URL,
+):
+    all_results = []
+    url = features_api_url
+
+    beam = {"analysis_id": location["analysis_id"]}
+    if group_id:
+        beam["group_id"] = group_id
+
+    while url:
+        response = requests.post(
+            url=url,
+            headers={
+                "Authorization": f"Bearer {access_token}",
+                "Accept": "application/json",
+            },
+            json={
+                "active": {"gte": location["start"], "lte": location["end"]},
+                "beam": beam,
+            },
+        )
+
+        if response.status_code != 200:
+            print(
+                f"--- the request failed with status code {response.status_code} {response.text}"
+            )
+
+        result = response.json()
+        all_results.extend(result.get("results", []))
+        url = result.get("next")
+
+    df = pd.json_normalize(all_results, sep="_")
+    return df

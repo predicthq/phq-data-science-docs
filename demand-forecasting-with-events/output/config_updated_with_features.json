@@ -1,0 +1,456 @@
+{
+    "store_0": {
+        "lat": 40.74559205863674,
+        "lon": -73.9945205785237,
+        "analysis_name": "store_0_daily_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-02",
+        "end": "2019-12-31",
+        "analysis_id": "itHSB5-WICk",
+        "upload_status": 202,
+        "readiness_status": "ready",
+        "important_features": [
+            "phq_attendance_expos_hospitality",
+            "phq_impact_public_holidays_hospitality",
+            "phq_impact_observances_hospitality",
+            "phq_impact_academic_holiday",
+            "phq_impact_academic_exam",
+            "phq_attendance_sports_hospitality",
+            "phq_impact_severe_weather_cold_wave_storm_retail",
+            "phq_impact_severe_weather_cold_wave_retail",
+            "phq_attendance_community_hospitality",
+            "phq_attendance_conferences_hospitality"
+        ],
+        "feature_importance": [
+            {
+                "feature_group": "expos",
+                "features": [
+                    "phq_attendance_expos_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "public-holidays",
+                "features": [
+                    "phq_impact_public_holidays_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "observances",
+                "features": [
+                    "phq_impact_observances_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "academic",
+                "features": [
+                    "phq_impact_academic_holiday",
+                    "phq_impact_academic_exam"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "sports",
+                "features": [
+                    "phq_attendance_sports_hospitality"
+                ],
+                "p_value": 0.0007,
+                "important": true
+            },
+            {
+                "feature_group": "severe-weather",
+                "features": [
+                    "phq_impact_severe_weather_cold_wave_storm_retail",
+                    "phq_impact_severe_weather_cold_wave_retail"
+                ],
+                "p_value": 0.0106,
+                "important": true
+            },
+            {
+                "feature_group": "community",
+                "features": [
+                    "phq_attendance_community_hospitality"
+                ],
+                "p_value": 0.0213,
+                "important": true
+            },
+            {
+                "feature_group": "conferences",
+                "features": [
+                    "phq_attendance_conferences_hospitality"
+                ],
+                "p_value": 0.0213,
+                "important": true
+            },
+            {
+                "feature_group": "performing-arts",
+                "features": [
+                    "phq_attendance_performing_arts_hospitality"
+                ],
+                "p_value": 0.7076,
+                "important": false
+            },
+            {
+                "feature_group": "concerts",
+                "features": [
+                    "phq_attendance_concerts_hospitality"
+                ],
+                "p_value": 0.8192,
+                "important": false
+            },
+            {
+                "feature_group": "school-holidays",
+                "features": [
+                    "phq_impact_school_holidays"
+                ],
+                "p_value": 0.8192,
+                "important": false
+            },
+            {
+                "feature_group": "festivals",
+                "features": [
+                    "phq_attendance_festivals_hospitality"
+                ],
+                "p_value": 0.9506,
+                "important": false
+            }
+        ]
+    },
+    "store_1": {
+        "lat": 33.971191942428334,
+        "lon": -118.16436160102515,
+        "analysis_name": "store_1_daily_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-02",
+        "end": "2018-11-30",
+        "analysis_id": "XCwohExDJH4",
+        "upload_status": 202,
+        "readiness_status": "ready",
+        "important_features": [
+            "phq_attendance_school_holidays",
+            "phq_attendance_festivals_hospitality",
+            "phq_attendance_sports_hospitality",
+            "phq_impact_public_holidays_hospitality",
+            "phq_impact_observances_hospitality",
+            "phq_impact_severe_weather_cold_wave_storm_retail",
+            "phq_impact_severe_weather_tornado_retail",
+            "phq_impact_severe_weather_heat_wave_retail"
+        ],
+        "feature_importance": [
+            {
+                "feature_group": "school-holidays",
+                "features": [
+                    "phq_attendance_school_holidays"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "festivals",
+                "features": [
+                    "phq_attendance_festivals_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "sports",
+                "features": [
+                    "phq_attendance_sports_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "public-holidays",
+                "features": [
+                    "phq_impact_public_holidays_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "observances",
+                "features": [
+                    "phq_impact_observances_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "severe-weather",
+                "features": [
+                    "phq_impact_severe_weather_cold_wave_storm_retail",
+                    "phq_impact_severe_weather_tornado_retail",
+                    "phq_impact_severe_weather_heat_wave_retail"
+                ],
+                "p_value": 0.0164,
+                "important": true
+            }
+        ]
+    },
+    "store_2": {
+        "lat": 40.751582853596915,
+        "lon": -73.98155897848956,
+        "analysis_name": "store_2_monday_weekly_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-09",
+        "end": "2019-12-23",
+        "analysis_id": "yFtsOK53__M",
+        "upload_status": 202,
+        "readiness_status": "ready",
+        "important_features": [
+            "phq_attendance_performing_arts_hospitality",
+            "phq_attendance_expos_hospitality",
+            "phq_impact_public_holidays_hospitality",
+            "phq_impact_school_holidays",
+            "phq_impact_observances_hospitality",
+            "phq_attendance_concerts_hospitality",
+            "phq_impact_severe_weather_thunderstorm_retail",
+            "phq_impact_severe_weather_cold_wave_retail",
+            "phq_impact_severe_weather_cold_wave_storm_retail",
+            "phq_impact_severe_weather_flood_retail",
+            "phq_impact_academic_holiday",
+            "phq_impact_academic_exam",
+            "phq_attendance_sports_hospitality",
+            "phq_attendance_conferences_hospitality"
+        ],
+        "feature_importance": [
+            {
+                "feature_group": "performing-arts",
+                "features": [
+                    "phq_attendance_performing_arts_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "expos",
+                "features": [
+                    "phq_attendance_expos_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "public-holidays",
+                "features": [
+                    "phq_impact_public_holidays_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "school-holidays",
+                "features": [
+                    "phq_impact_school_holidays"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "observances",
+                "features": [
+                    "phq_impact_observances_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "concerts",
+                "features": [
+                    "phq_attendance_concerts_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "severe-weather",
+                "features": [
+                    "phq_impact_severe_weather_thunderstorm_retail",
+                    "phq_impact_severe_weather_cold_wave_retail",
+                    "phq_impact_severe_weather_cold_wave_storm_retail",
+                    "phq_impact_severe_weather_flood_retail"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "academic",
+                "features": [
+                    "phq_impact_academic_holiday",
+                    "phq_impact_academic_exam"
+                ],
+                "p_value": 0.0013,
+                "important": true
+            },
+            {
+                "feature_group": "sports",
+                "features": [
+                    "phq_attendance_sports_hospitality"
+                ],
+                "p_value": 0.008,
+                "important": true
+            },
+            {
+                "feature_group": "conferences",
+                "features": [
+                    "phq_attendance_conferences_hospitality"
+                ],
+                "p_value": 0.008,
+                "important": true
+            },
+            {
+                "feature_group": "community",
+                "features": [
+                    "phq_attendance_community_hospitality"
+                ],
+                "p_value": 0.9992,
+                "important": false
+            },
+            {
+                "feature_group": "festivals",
+                "features": [
+                    "phq_attendance_festivals_hospitality"
+                ],
+                "p_value": 0.9999,
+                "important": false
+            }
+        ]
+    },
+    "store_3": {
+        "lat": 40.74559205863674,
+        "lon": -73.9945205785237,
+        "analysis_name": "store_3_monday_weekly_analysis",
+        "industry": "restaurants",
+        "start": "2017-01-09",
+        "end": "2019-12-23",
+        "analysis_id": "rUpVMrAcqCQ",
+        "upload_status": 202,
+        "readiness_status": "ready",
+        "important_features": [
+            "phq_attendance_performing_arts_hospitality",
+            "phq_attendance_conferences_hospitality",
+            "phq_impact_public_holidays_hospitality",
+            "phq_impact_observances_hospitality",
+            "phq_attendance_sports_hospitality",
+            "phq_impact_academic_holiday",
+            "phq_impact_academic_exam",
+            "phq_attendance_community_hospitality",
+            "phq_attendance_festivals_hospitality",
+            "phq_attendance_expos_hospitality",
+            "phq_impact_severe_weather_flood_retail",
+            "phq_impact_severe_weather_cold_wave_retail",
+            "phq_impact_severe_weather_cold_wave_storm_retail",
+            "phq_impact_severe_weather_thunderstorm_retail"
+        ],
+        "feature_importance": [
+            {
+                "feature_group": "performing-arts",
+                "features": [
+                    "phq_attendance_performing_arts_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "conferences",
+                "features": [
+                    "phq_attendance_conferences_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "public-holidays",
+                "features": [
+                    "phq_impact_public_holidays_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "observances",
+                "features": [
+                    "phq_impact_observances_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "sports",
+                "features": [
+                    "phq_attendance_sports_hospitality"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "academic",
+                "features": [
+                    "phq_impact_academic_holiday",
+                    "phq_impact_academic_exam"
+                ],
+                "p_value": 0.0,
+                "important": true
+            },
+            {
+                "feature_group": "community",
+                "features": [
+                    "phq_attendance_community_hospitality"
+                ],
+                "p_value": 0.0001,
+                "important": true
+            },
+            {
+                "feature_group": "festivals",
+                "features": [
+                    "phq_attendance_festivals_hospitality"
+                ],
+                "p_value": 0.0001,
+                "important": true
+            },
+            {
+                "feature_group": "expos",
+                "features": [
+                    "phq_attendance_expos_hospitality"
+                ],
+                "p_value": 0.0001,
+                "important": true
+            },
+            {
+                "feature_group": "severe-weather",
+                "features": [
+                    "phq_impact_severe_weather_flood_retail",
+                    "phq_impact_severe_weather_cold_wave_retail",
+                    "phq_impact_severe_weather_cold_wave_storm_retail",
+                    "phq_impact_severe_weather_thunderstorm_retail"
+                ],
+                "p_value": 0.0001,
+                "important": true
+            },
+            {
+                "feature_group": "concerts",
+                "features": [
+                    "phq_attendance_concerts_hospitality"
+                ],
+                "p_value": 0.9998,
+                "important": false
+            },
+            {
+                "feature_group": "school-holidays",
+                "features": [
+                    "phq_impact_school_holidays"
+                ],
+                "p_value": 0.9999,
+                "important": false
+            }
+        ]
+    }
+}
