@@ -1,6 +1,11 @@
-{
-  "name": "Sample Restaurant Location",
-  "lat": 51.50396,
-  "lon": 0.00476,
-  "industry": "restaurants"
-}
+[
+  {
+    "name": "Sample Restaurant Location",
+    "csv_path": "data/sample_demand.csv",
+    "lat": 51.50396,
+    "lon": 0.00476,
+    "industry": "restaurants"
+  }
+]
+
+
