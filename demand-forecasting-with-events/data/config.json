@@ -15,12 +15,16 @@
     "lat": 40.751582853596915,
     "lon": -73.98155897848956,
     "analysis_name": "store_2_monday_weekly_analysis",
-    "industry": "restaurants"
+    "industry": "restaurants",
+    "interval": "week",
+    "week_start_day": "monday"
   },
 "store_3": {
     "lat": 40.74559205863674,
     "lon": -73.9945205785237,
     "analysis_name": "store_3_monday_weekly_analysis",
-    "industry": "restaurants"
+    "industry": "restaurants",
+    "interval": "week",
+    "week_start_day": "monday"
   }
 }
