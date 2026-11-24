@@ -75,6 +75,11 @@ def create_analysis_id(
             },
     }
 
+    # Weekly demand: pass the interval and week start; daily locations keep Beam's default.
+    for key in ("interval", "week_start_day"):
+        if key in location:
+            json["demand_type"][key] = location[key]
+
     response = requests.post(
         url=f"{beam_api_url}/analyses",
         headers={
